@@ -11,9 +11,9 @@ tools and a **critic agent** scores rendered views and feeds back prescriptive f
 ## Install
 
 ```bash
-conda create -n surfscaff3d python=3.10 && conda activate surfscaff3d 
+conda create -n surfscaff3d python=3.10 && conda activate surfscaff3d
 pip install -r requirements.txt
-cp .env.example .env                                                    # then fill in API keys
+cp .env.example .env   # then fill in API keys
 ```
 
 **Generators:** you can use an OpenRouter model (`OPENROUTER_API_KEY`), e.g. Claude Sonnet 4.6 (`anthropic/claude-sonnet-4.6`, **SurfScaff3D**), Kimi K2.6 (`moonshotai/kimi-k2.6`, **SurfScaff3D-K**), Qwen3.6-35B-A3B (`qwen/qwen3.6-35b-a3b`, **SurfScaff3D-Q**), MiMo-V2.5 (`xiaomi/mimo-v2.5`), DeepSeek-V4-flash (`deepseek/deepseek-v4-flash-0731`)
@@ -52,7 +52,8 @@ python edit_run.py <faces_file> "make the legs thinner"
 python edit_run.py <faces_file> "make it look like this" --images ref.png
 
 # use Claude instead of Kimi
-python edit_run.py <faces_file> "make the legs thinner" --gen-model anthropic/claude-sonnet-4.6
+python edit_run.py <faces_file> "make the legs thinner" \
+    --gen-model anthropic/claude-sonnet-4.6
 ```
 
 ## Large-scale runs
@@ -84,7 +85,7 @@ python run_edit_pool.py -f jobs.jsonl -j 8 --critic-iters 2
 ```
 JSONL jobs file, one edit per line (`uid` names the output folder and must be unique; relative paths resolve from the jobs file's folder):
 ```
-{"src":"chair/final_faces.txt","instruction":"make the legs thinner","shape":"a wooden chair"}
+{"src":"chair/final_faces.txt","instruction":"make it taller","shape":"a chair"}
 {"uid":"chair1","src":"...","instruction":"...","images":"ref.png,side.png"}
 ```
 
