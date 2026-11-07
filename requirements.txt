@@ -1,0 +1,9 @@
+openai==2.53.0
+geomdl==5.4.0
+trimesh==4.12.2
+httpx==0.28.1
+matplotlib==3.10.1
+numpy==2.2.4
+pyvista==0.48.4
+python-dotenv==1.2.2
+Pillow==11.1.0
